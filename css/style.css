@@ -1,0 +1,291 @@
+/* Start Variables */
+:root {
+    /* Primary Color */
+    --primary-color: hsl(246, 80%, 60%);
+    /* Overlay Color */
+    --light-red: hsl(15, 100%, 70%);
+    /*(work)*/
+    --soft-blue: hsl(195, 74%, 62%);
+    /*(play)*/
+    --light-red: hsl(348, 100%, 68%);
+    /*(study)*/
+    --lime-green: hsl(145, 58%, 55%);
+    /*(exercise)*/
+    --violet: hsl(264, 64%, 52%);
+    /*(social)*/
+    --soft-orange: hsl(43, 84%, 65%);
+    /*(self care)*/
+    /* Typing Colors */
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 78%);
+}
+
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    background-color: var(--very-dark-blue);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    min-height: 100vh;
+}
+
+.column {
+    margin: auto 0;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+
+.column:not(:first-child) {
+    background-color: transparent;
+}
+
+.column:nth-of-type(1) {}
+
+.column:nth-of-type(1) .info {
+    background-color: var(--desaturated-blue);
+}
+
+.column:nth-of-type(1)>div {
+    /* margin: 0 40px; */
+}
+
+.column:nth-of-type(1) .info {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.column .info .image {
+    width: fit-content;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.column .info .image img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.column:nth-of-type(1) .info .title {
+    color: var(--pale-blue);
+    margin-bottom: 5px;
+}
+
+.column:nth-of-type(1) .info h2 {
+    color: white;
+    font-weight: 300;
+    max-width: 50%;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.column .type {
+    padding: 0 30px;
+    background-color: var(--dark-blue);
+}
+
+.column .type p {
+    color: var(--pale-blue);
+    margin-top: 20px;
+    transition: color .5s;
+    opacity: .7;
+    cursor: pointer;
+}
+
+.column .type .selected {
+    color: white;
+    opacity: 1;
+}
+
+.column .type p:hover {
+    color: white;
+    opacity: 1;
+}
+
+.column .type p:last-child {
+    margin-bottom: 20px;
+}
+
+.column .card {
+    border-radius: 10px;
+    padding-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.column .card::after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 77px;
+    height: 50px;
+    z-index: -1;
+}
+
+.column .work {
+    background-color: hsl(15, 100%, 70%);
+}
+
+.column .work::after {
+    background-image: url(../imgs/icon-work.svg);
+}
+
+.column .excercise {
+    background-color: hsl(145, 58%, 55%);
+}
+
+.column .excercise::after {
+    background-image: url(../imgs/icon-exercise.svg);
+}
+
+.column .play {
+    background-color: hsl(195, 74%, 62%);
+}
+
+.column .play::after {
+    background-image: url(../imgs/icon-play.svg);
+}
+
+.column .social {
+    background-color: hsl(264, 64%, 52%);
+}
+
+.column .social::after {
+    background-image: url(../imgs/icon-social.svg);
+}
+
+.column .study {
+    background-color: hsl(348, 100%, 68%);
+}
+
+.column .study::after {
+    background-image: url(../imgs/icon-study.svg);
+}
+
+.column .self {
+    background-color: hsl(43, 84%, 65%);
+}
+
+.column .self::after {
+    background-image: url(../imgs/icon-self-care.svg);
+}
+
+.column .card:nth-of-type(2) {
+    margin-top: 29px;
+}
+
+.column .card:hover .info {
+    background-color: hsl(235deg 37% 33%);
+    ;
+}
+
+.column .card .info {
+    background-color: var(--dark-blue);
+    border-radius: 7px;
+    padding: 25px;
+    z-index: 3;
+    transition: background-color .5s;
+}
+
+.column .card .info .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-weight: 500;
+}
+
+.column .card .info .title .icon {
+    display: flex;
+    justify-content: space-between;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    gap: 1px;
+}
+
+.column .card .info .title .icon span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--desaturated-blue);
+    transition: color .5s;
+    cursor: pointer;
+}
+
+.column .card .info .title .icon:hover span {
+    background-color: white;
+}
+
+.column .card .info h2 {
+    color: white;
+    font-weight: 300;
+    max-width: 50%;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.column .card .info .last {
+    color: var(--pale-blue);
+    opacity: .7;
+    transition: color .5s;
+}
+
+.column .card:hover .info .last {
+    color: white;
+    opacity: 1;
+}
