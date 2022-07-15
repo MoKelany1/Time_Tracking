@@ -103,6 +103,17 @@ body {
     border-radius: 10px;
 }
 
+@media (max-width:573px) {
+    .column:nth-of-type(1) .info {
+        padding: 30px 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
 .column .info .image {
     width: fit-content;
     border-radius: 50%;
@@ -111,6 +122,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 40px;
+}
+
+@media (max-width:573px) {
+    .column .info .image {
+        margin-bottom: 0;
+    }
 }
 
 .column .info .image img {
@@ -131,9 +148,25 @@ body {
     font-size: 30px;
 }
 
+@media (max-width:573px) {
+    .column:nth-of-type(1) .info .about h2 {
+        max-width: 100%;
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+}
+
 .column .type {
     padding: 0 30px;
     background-color: var(--dark-blue);
+}
+
+@media (max-width:573px) {
+    .column .type {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+    }
 }
 
 .column .type p {
@@ -288,4 +321,57 @@ body {
 .column .card:hover .info .last {
     color: white;
     opacity: 1;
+}
+
+.attribution {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+@media (max-width:573px) {
+    .attribution {
+        gap: 40px;
+    }
+}
+
+.attribution>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.attribution>div>a {
+    text-decoration: none;
+    color: var(--desaturated-blue);
+    display: block;
+    border: 1px solid var(--dark-blue);
+    padding: 10px 20px;
+    transition: color .5s;
+    border-radius: 6px;
+    position: relative;
+}
+
+.attribution>div>a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 102%;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    z-index: -1;
+    border-radius: 6px;
+    transition: width .5s;
+}
+
+.attribution>div>a:hover {
+    color: var(--very-dark-blue);
+    border-color: var(--primary-color);
+}
+
+.attribution>div>a:hover::before {
+    width: 101%;
 }
