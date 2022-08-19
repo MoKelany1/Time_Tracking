@@ -1,2 +1,2 @@
 # Time_Tracking
-HTML-CSS Dashboard design
+HTML-CSS-JS Dashboard design
